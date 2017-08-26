@@ -8,6 +8,6 @@ for /F %%i in ('%DEPS%') do (
   set PKGLIST=go list -f "{{if not .Standard}}{{.ImportPath}}{{end}}" %%i ^| findstr "^github\.com/"
   for /F %%j in ('!PKGLIST!') do (
     github-star %%j
-	echo Stared %%j
+    echo Stared %%j
   ) 
 )
